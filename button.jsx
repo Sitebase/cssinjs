@@ -1,8 +1,4 @@
 var Button = React.createClass({
-  getInitialState: function()
-  {
-    return { test: 'ok' }
-  },
   styles: {
     container: {
       fontSize: '13px',
@@ -26,9 +22,6 @@ var Button = React.createClass({
     largeSize: {
       fontSize: '17px',
       lineHeight: '30px'
-    },
-    hover: {
-      backgroundColor: '#0F0'
     }
   },
   propTypes: {
@@ -36,21 +29,18 @@ var Button = React.createClass({
     style: React.PropTypes.object,
     size: React.PropTypes.oneOf(['small', 'default', 'large']),
   },
-  mixins: [InteractionAwareMixin],
   getDefaultProps: function() {
     return {
       size: 'default'
     };
   },
   render: function() {
-    console.error('Render button with state', this.state);
     return (
       <button style={m(
         this.styles.container,
         this.props.isDepressed && this.styles.depressed,
         this.props.size === 'small' && this.styles.smallSize,
         this.props.size === 'large' && this.styles.largeSize,
-        this.state.interactionHovered && this.styles.hover,
         this.props.style
       )}>{this.props.children}</button>
     );
