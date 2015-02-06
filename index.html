@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/react.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.12.2/JSXTransformer.js"></script>
+  <script src="m.js"></script>
+  <script src="interaction-aware-mixin.js"></script>
+</head>
+<body>
+  <div id="example">test</div>
+  <script src="button.jsx" type="text/jsx"></script>
+  <script type="text/jsx">
+
+    var customStyle = {backgroundColor: '#F00'};
+
+    React.render(
+      <div>
+        <Button>Overslaan</Button>
+        <Button isDepressed={true}>Volgende</Button>
+        <Button style={ customStyle } isDepressed={true}>Custom button</Button>
+        <Button isDepressed={true} size="large">Volgende</Button>
+        <Button size="small">Volgende</Button>
+      </div>,
+      document.getElementById('example')
+      );
+  </script>
+</body>
+</html>
