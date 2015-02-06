@@ -1,10 +1,9 @@
 var InteractionAwareMixin = {
   componentWillMount: function() {
     this.state = this.state || {};
-    this.state.interactionHovered = false;
+    this.state.hovered = false;
   },
   componentDidMount: function() {
-    this.state = this.state || {};
     this.getDOMNode().addEventListener("mouseover", this.onOver.bind(this));
     this.getDOMNode().addEventListener("mouseout", this.onOut.bind(this));
   },
@@ -14,10 +13,10 @@ var InteractionAwareMixin = {
   },
   onOver: function() {
     console.error('Hover');
-    this.setState({ interactionHovered: true });
+    this.setState({ hovered: true });
   },
   onOut: function() {
     console.error('Out');
-    this.setState({ interactionHovered: false });
+    this.setState({ hovered: false });
   },
 };

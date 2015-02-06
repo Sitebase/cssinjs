@@ -1,8 +1,4 @@
 var Button = React.createClass({
-  getInitialState: function()
-  {
-    return { test: 'ok' }
-  },
   styles: {
     container: {
       fontSize: '13px',
@@ -50,7 +46,7 @@ var Button = React.createClass({
         this.props.isDepressed && this.styles.depressed,
         this.props.size === 'small' && this.styles.smallSize,
         this.props.size === 'large' && this.styles.largeSize,
-        this.state.interactionHovered && this.styles.hover,
+        this.state.hovered && this.styles.hover,
         this.props.style
       )}>{this.props.children}</button>
     );
