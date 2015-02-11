@@ -10,3 +10,4 @@ How to use
 Problems I ran into
 -------------------
 * Hover states(see branch `feature-interaction-mixin`): There is now way to define `:hover` states in inline CSS. So the solution that I'm thinking of is using a interaction aware mixin that will set a `hover` state property to `true` when a user hovers over the item. Possible problems is that the m() expression will become really big.
+* Responsive layouts: media queries
